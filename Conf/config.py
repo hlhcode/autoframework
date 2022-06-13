@@ -36,9 +36,11 @@ def get_all_conf():
 config = get_all_conf()
 sys_cfg = config['sys']
 smtp_cfg = config['smtp']
+email_cfg = config['email']
 log_cfg = config['log']
 
 print(sys_cfg)
 print(smtp_cfg)
 print(smtp_cfg['host'])
+print(email_cfg)
 print(log_cfg)
