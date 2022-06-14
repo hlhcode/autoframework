@@ -51,7 +51,7 @@ class Email:
     def _attach(self, file):
         if os.path.isfile(file) and os.path.getsize(file) <= FILESIZE * 1024 * 1024:
             attach = MIMEApplication(open(file, 'rb').read())
-            attach.add_header('Content-Disposition', 'attachment', filename=os.path.basenae(file))
+            attach.add_header('Content-Disposition', 'attachment', filename=os.path.basename(file))
             attach['Content-Type'] = 'application/octet-stream'
             self.message.attach(attach)
         else:
