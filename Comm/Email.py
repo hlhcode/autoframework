@@ -61,8 +61,8 @@ class Email:
         s = smtplib.SMTP_SSL(smtp_cfg['host'], int(smtp_cfg['port']))
         result = True
         try:
-            s.login(self.smtp_cfg['user'], self.smtp_cfg['passwd'])
-            s.sendmail(self.smtp_cfg['sender'], self.smtp_cfg['receivers'], self.message.as_string())
+            s.login(smtp_cfg['user'], smtp_cfg['passwd'])
+            s.sendmail(email_cfg['sender'], email_cfg['receivers'], self.message.as_string())
         except smtplib.SMTPException as e:
             result = False
             logger.error('Send mail faild', exc_info=True)
